@@ -1,0 +1,70 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add New Project</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <div>
+        <label>Project:</label>
+        <br>
+        <input #newTitle>
+      </div>
+      <div>
+        <label>Manager:</label>
+        <br>
+        <input #newManager>
+      </div>
+      <div>
+        <label>Description:</label>
+        <br>
+        <input #newDescription>
+      </div>
+      <div>
+        <label>Total Amount Requested:</label>
+        <br>
+        <input #newTotalAmount>
+      </div>
+      <div>
+        <label>Amount Accrued:</label>
+        <br>
+        <input #newCurrentAmount>
+      </div>
+      <div>
+        <label>How we will spend this money:</label>
+        <br>
+        <textarea #newDetail></textarea>
+      </div>
+      <div>
+        <label>Type or Category:</label>
+        <br>
+        <input #newType>
+      </div>
+      <div>
+        <label>Gifts of Thanks:</label>
+        <br>
+        <input #newReward>
+      </div>
+      <button routerLink="" (click)="submitForm(newTitle.value,
+      newManager.value,
+      newDescription.value,
+      newTotalAmount.value,
+      newCurrentAmount.value,
+      newDetail.value,
+      newType.value,
+      newReward.value);
+      newTitle.value='';
+      newManager.value='';
+      newDescription.value='';
+      newTotalAmount.value='';
+      newCurrentAmount.value='';
+      newDetail.value='';
+      newType.value='';
+      newReward.value='';">Add</button>
+...
+    </div>
+  </div>
+</div>
+
+<div>
+  <app-project></app-project>
+</div>

@@ -1,0 +1,22 @@
+{ "projects": [{
+    "title": "Pulse",
+    "manager": "Pink Floyd",
+    "description": "A live  album by the English progressive rock band originally released in 1995, on the label EMI in the United Kingdom.",
+    "totalAmount": 1000,
+    "currentAmount": 100,
+    "detail": "words",
+    "type": "stuff",
+    "reward": "morestuff",
+    "id": "1"
+    }, {
+    "title": "Puldfgse",
+    "manager": "Pink gtgfdFloyd",
+    "description": "A live  album by the English progressive rock band originally releearrtrertrtesased in 1995, on the label EMI in the United Kingdom.",
+    "totalAmount": 2000,
+    "currentAmount": 100,
+    "detail": "wordfgdfgds",
+    "type": "stufsfgdfgfdfgf",
+    "reward": "morestusdfdfgff",
+    "id": "2"
+  }]
+}
