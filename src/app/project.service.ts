@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Project } from './project.model';
-import { PROJECTS } from './mock-projects';
+// import { PROJECTS } from './mock-projects';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
@@ -30,7 +30,8 @@ export class ProjectService {
                                 description: localUpdatedProject.description, totalAmount: localUpdatedProject.totalAmount, currentAmount: localUpdatedProject.currentAmount,
                                 detail: localUpdatedProject.detail,
                                 type: localUpdatedProject.type,
-                                reward: localUpdatedProject.reward
+                                reward: localUpdatedProject.reward,
+                                image: localUpdatedProject.image
     });
   }
 

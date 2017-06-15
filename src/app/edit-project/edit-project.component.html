@@ -1,60 +1,71 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Edit This Project</h3>
-  </div>
-  <div class="panel-body">
-    <div>
-      <label>What kind of project are you interested in funding?</label>
-      <select [(ngModel)]="selectedProject.type">
-         <option value="Technology">Technology</option>
-         <option value="Health and Wellness">Health and Wellness</option>
-         <option value="Non-profit">Non-profit</option>
-         <option value="Entertainment">Entertainment</option>
-         <option value="Education">Education</option>
-      </select>
-      <div>
-        <label>Project:</label>
-        <br>
-        <input [(ngModel)]="selectedProject.title">
+    <button *ngIf="!addForm" (click)='showAddForm()'class="btn">Edit this Project</button>
+    <br>
+    <div *ngIf="addForm">
+      <div class="panel-body">
+        <div>
+          <label>What kind of project are you interested in funding?</label>
+          <select [(ngModel)]="selectedProject.type">
+             <option value="Technology">Technology</option>
+             <option value="Health and Wellness">Health and Wellness</option>
+             <option value="Non-profit">Non-profit</option>
+             <option value="Entertainment">Entertainment</option>
+             <option value="Education">Education</option>
+          </select>
+          <div>
+            <label>Project:</label>
+            <br>
+            <input [(ngModel)]="selectedProject.title">
+          </div>
+          <div>
+            <label>Manager:</label>
+            <br>
+            <input [(ngModel)]="selectedProject.manager">
+          </div>
+          <div>
+            <label>Description:</label>
+            <br>
+            <input [(ngModel)]="selectedProject.description">
+          </div>
+          <div>
+            <label>Total Amount Requested:</label>
+            <br>
+            <input [(ngModel)]="selectedProject.totalAmount">
+          </div>
+          <div>
+            <label>Amount Accrued:</label>
+            <br>
+            <input [(ngModel)]="selectedProject.currentAmount">
+          </div>
+          <div>
+            <label>How we will spend this money:</label>
+            <br>
+            <input [(ngModel)]="selectedProject.detail">
+          </div>
+          <div>
+            <label>Gifts of Thanks:</label>
+            <br>
+            <input [(ngModel)]="selectedProject.reward">
+          </div>
+          <div>
+            <label>Image URL:</label>
+            <br>
+            <input [(ngModel)]="selectedProject.image">
+          </div>
+          <button (click)='showAddForm()' (click)="beginUpdatingProject(selectedProject);
+          selectedProject.title.value='';
+          selectedProject.manager.value='';
+          selectedProject.description.value='';
+          selectedProject.totalAmount.value='';
+          selectedProject.currentAmount.value='';
+          selectedProject.detail.value='';
+          selectedProject.reward.value='';
+          selectedProject.image.value='';
+          ">Update</button>
+          <button (click)="beginDeletingProject(selectedProject)">Delete</button>
+        </div>
       </div>
-      <div>
-        <label>Manager:</label>
-        <br>
-        <input [(ngModel)]="selectedProject.manager">
-      </div>
-      <div>
-        <label>Description:</label>
-        <br>
-        <input [(ngModel)]="selectedProject.description">
-      </div>
-      <div>
-        <label>Total Amount Requested:</label>
-        <br>
-        <input [(ngModel)]="selectedProject.totalAmount">
-      </div>
-      <div>
-        <label>Amount Accrued:</label>
-        <br>
-        <input [(ngModel)]="selectedProject.currentAmount">
-      </div>
-      <div>
-        <label>How we will spend this money:</label>
-        <br>
-        <input [(ngModel)]="selectedProject.detail">
-      </div>
-      <!-- <div>
-        <label>Type or Category:</label>
-        <br>
-        <input [(ngModel)]="selectedProject.type">
-      </div> -->
-      <div>
-        <label>Gifts of Thanks:</label>
-        <br>
-        <input [(ngModel)]="selectedProject.reward">
-      </div>
-      <button (click)="beginUpdatingProject(selectedProject)">Update</button>
-      <button (click)="beginDeletingProject(selectedProject)">Delete</button>
-...
     </div>
   </div>
 </div>

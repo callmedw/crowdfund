@@ -10,9 +10,15 @@ import { ProjectService } from '../project.service';
 })
 
 export class AdminComponent implements OnInit {
-  // goToProjectPage() {
-  //   this.router.navigate('');
-  // };
+  addForm: boolean = false;
+  showAddForm() {
+    if(this.addForm === true) {
+      this.addForm = false;
+    } else {
+      this.addForm = true;
+    }
+  }
+
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
@@ -25,8 +31,9 @@ export class AdminComponent implements OnInit {
     currentAmount: number,
     detail: string,
     type: string,
-    reward: string) {
-    const NEWPROJECT: Project = new Project(title, manager, description, totalAmount, currentAmount, detail, type, reward);
+    reward: string,
+    image: string) {
+    const NEWPROJECT: Project = new Project(title, manager, description, totalAmount, currentAmount, detail, type, reward, image);
     this.projectService.addProject(NEWPROJECT);
 
   }

@@ -1,7 +1,6 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Add New Project</h3>
-  </div>
+<button *ngIf="!addForm" (click)='showAddForm()'class="btn">Add a New Project</button>
+<br>
+<div *ngIf="addForm">
   <div class="panel-body">
       <label>What kind of project are you interested in funding?</label>
       <select #newType>
@@ -41,24 +40,25 @@
         <br>
         <textarea #newDetail></textarea>
       </div>
-      <!-- <div>
-        <label>Type or Category:</label>
+      <div>
+        <label>Image URL:</label>
         <br>
-        <input #newType>
-      </div> -->
+        <input #newImage>
+      </div>
       <div>
         <label>Gifts of Thanks:</label>
         <br>
         <input #newReward>
       </div>
-      <button routerLink="" (click)="submitForm(newTitle.value,
+      <button routerLink="" (click)='showAddForm()' (click)="submitForm(newTitle.value,
       newManager.value,
       newDescription.value,
       newTotalAmount.value,
       newCurrentAmount.value,
       newDetail.value,
       newType.value,
-      newReward.value);
+      newReward.value,
+      newImage.value);
       newTitle.value='';
       newManager.value='';
       newDescription.value='';
@@ -66,10 +66,10 @@
       newCurrentAmount.value='';
       newDetail.value='';
       newType.value='';
-      newReward.value='';">Add</button>
+      newReward.value='';
+      newImage.value='';">Add</button>
+    </div>
   </div>
-</div>
-
 <div>
   <app-project></app-project>
 </div>

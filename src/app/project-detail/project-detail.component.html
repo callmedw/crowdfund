@@ -1,5 +1,11 @@
-<div>
-  <h3>{{(projectToDisplay | async)?.title}}</h3>
-  <h4>{{(projectToDisplay | async)?.manager}}</h4>
-  <p>{{(projectToDisplay | async)?.type}}</p>
+<div class ="test-pic">
+  <img src="{{(projectToDisplay | async)?.image}}">
+  <h3>Title: {{(projectToDisplay | async)?.title}}</h3>
+  <h4>Manager: {{(projectToDisplay | async)?.manager}}</h4>
+  <p>Type: {{(projectToDisplay | async)?.type}}</p>
+  <p>Description: {{(projectToDisplay | async)?.description}}</p>
+  <p>Goal: {{(projectToDisplay | async)?.totalAmount}}</p>
+  <p>Pledged: {{(projectToDisplay | async)?.currentAmount}}</p>
+  <p>Details: {{(projectToDisplay | async)?.detail}}</p>
+  <p>Reward: {{(projectToDisplay | async)?.reward}}</p>
 </div>

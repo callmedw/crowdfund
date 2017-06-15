@@ -6,5 +6,6 @@ export class Project {
     public currentAmount: number,
     public detail: string,
     public type: string,
-    public reward: string) { }
+    public reward: string,
+    public image: string) { }
 }

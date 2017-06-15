@@ -9,6 +9,14 @@ import { ProjectService } from '../project.service';
 })
 export class EditProjectComponent implements OnInit {
   @Input() selectedProject;
+  addForm: boolean = false;
+  showAddForm() {
+    if(this.addForm === true) {
+      this.addForm = false;
+    } else {
+      this.addForm = true;
+    }
+  }
 
   constructor(private projectService: ProjectService) { }
 
