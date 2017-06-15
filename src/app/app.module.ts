@@ -12,6 +12,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AdminComponent } from './admin/admin.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
 import { TypePipe } from './type.pipe';
+import { AmountLeftPipe } from './amount-left.pipe';
+import { AddProjectComponent } from './add-project/add-project.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -27,7 +29,9 @@ export const firebaseConfig = {
     ProjectDetailComponent,
     AdminComponent,
     EditProjectComponent,
-    TypePipe
+    TypePipe,
+    AmountLeftPipe,
+    AddProjectComponent
   ],
   imports: [
     BrowserModule,

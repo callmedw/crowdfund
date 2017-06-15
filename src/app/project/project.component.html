@@ -9,7 +9,17 @@
   <option value="Education">Education</option>
 </select>
 
-<div *ngFor="let project of projects | async | type:filterByType" class="panel panel-default">
+<h3>Filter by Amount:</h3>
+<select (change)="onChange2($event.target.value)">
+  <option value="Greater than 75">Greater than 75%</option>
+  <option value="All Amounts">All Amounts</option>
+</select>
+
+<div>
+  <app-add-project></app-add-project>
+</div>
+
+<div *ngFor="let project of projects | async | type:filterByType | amountLeft:filterByAmountLeft" class="panel panel-default">
   <div class="panel-body">
     <h3 (click)="goToDetailPage(project)"><em>{{project.title}}</em> by {{project.manager}}</h3>
     <div *ngIf="currentRoute === '/admin'">

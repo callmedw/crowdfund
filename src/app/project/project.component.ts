@@ -14,6 +14,7 @@ export class ProjectComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
   filterByType: string = "All Types";
+  filterByAmountLeft: string = "All Amounts";
 
 
   goToDetailPage(clickedProject) {
@@ -27,5 +28,9 @@ export class ProjectComponent implements OnInit {
 
   onChange(optionFromMenu) {
   this.filterByType = optionFromMenu;
+  }
+
+  onChange2(optionFromMenu2) {
+    this.filterByAmountLeft = optionFromMenu2;
   }
 }

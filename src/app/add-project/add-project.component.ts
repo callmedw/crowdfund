@@ -3,13 +3,22 @@ import { Project } from '../project.model';
 import { ProjectService } from '../project.service';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css'],
+  selector: 'app-add-project',
+  templateUrl: './add-project.component.html',
+  styleUrls: ['./add-project.component.css'],
   providers: [ProjectService]
 })
 
-export class AdminComponent implements OnInit {
+export class AddProjectComponent implements OnInit {
+  addForm: boolean = false;
+  showAddForm() {
+    if(this.addForm === true) {
+      this.addForm = false;
+    } else {
+      this.addForm = true;
+    }
+  }
+
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
