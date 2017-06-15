@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 import { Project } from '../project.model';
 import { ProjectService } from '../project.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
+import { FirebaseListObservable } from 'angularfire2/database';
+
 
 @Component({
   selector: 'app-project-detail',
@@ -12,6 +14,7 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
   providers: [ProjectService]
 })
 export class ProjectDetailComponent implements OnInit {
+  projects: FirebaseListObservable<any[]>;
   projectId: string;
   projectToDisplay;
 
@@ -19,6 +22,7 @@ export class ProjectDetailComponent implements OnInit {
 
 
   ngOnInit() {
+    this.projects = this.projectService.getProjects();
     this.route.params.forEach((urlParameters) => {
       this.projectId = urlParameters['id'];
     });

@@ -14,6 +14,7 @@ import { EditProjectComponent } from './edit-project/edit-project.component';
 import { TypePipe } from './type.pipe';
 import { AmountLeftPipe } from './amount-left.pipe';
 import { AddProjectComponent } from './add-project/add-project.component';
+import { FundComponent } from './fund/fund.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -31,7 +32,8 @@ export const firebaseConfig = {
     EditProjectComponent,
     TypePipe,
     AmountLeftPipe,
-    AddProjectComponent
+    AddProjectComponent,
+    FundComponent
   ],
   imports: [
     BrowserModule,

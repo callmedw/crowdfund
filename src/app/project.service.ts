@@ -22,7 +22,15 @@ export class ProjectService {
     return this.database.object('projects/' + projectId);
   }
 
-  updateProject(localUpdatedProject){
+  fund(localProject) {
+    var firebaseProject = this.getProjectById(localProject.$key);
+    firebaseProject.update({
+      currentAmount: localProject.currentAmount
+    });
+  }
+
+
+  updateProject(localUpdatedProject) {
     var projectEntryInFirebase = this.getProjectById(localUpdatedProject.$key);
     projectEntryInFirebase.update({title: localUpdatedProject.title,
                                 manager: localUpdatedProject.manager,

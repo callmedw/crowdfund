@@ -9,3 +9,8 @@
   <p>Details: {{(projectToDisplay | async)?.detail}}</p>
   <p>Reward: {{(projectToDisplay | async)?.reward}}</p>
 </div>
+<div *ngFor="let project of projects | async">
+  <div *ngIf="project.$key == (projectToDisplay | async)?.$key">
+    <app-fund [selectedProject]='project'></app-fund>
+  </div>
+</div>

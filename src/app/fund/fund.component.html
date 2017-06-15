@@ -1,0 +1,5 @@
+<p>$ {{selectedProject.currentAmount}}</p>
+
+<label>Pledge Funds: $</label>
+  <input type="number" #fund>
+  <button (click)='showAddForm()' (click)="beginFund(selectedProject, fund.value); fund.value='';">Submit</button>
